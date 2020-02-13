@@ -32,10 +32,10 @@ struct D_Inf : Module {
 
 	D_Inf() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
-		configParam(OCTAVE_PARAM, -4, 4, 0);
-		configParam(COARSE_PARAM, -7, 7, 0);
-		configParam(HALF_SHARP_PARAM, 0, 1, 0);
-		configParam(INVERT_PARAM, 0, 1, 0);
+		configParam(OCTAVE_PARAM, -4, 4, 0, "Octave");
+		configParam(COARSE_PARAM, -7, 7, 0, "Coarse");
+		configParam(HALF_SHARP_PARAM, 0, 1, 0, "Half Sharp");
+		configParam(INVERT_PARAM, 0, 1, 0, "Invert");
 	}
 	void process(const ProcessArgs &args) override;
 

@@ -84,22 +84,22 @@ struct TachyonEntangler : Module {
 
 	TachyonEntangler() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
-		configParam(A_OCTAVE_PARAM, 4, 12, 8);
-		configParam(A_COARSE_PARAM, -7, 7, 0);
-		configParam(A_FINE_PARAM, -0.083333, 0.083333, 0.0);
-		configParam(B_RATIO_PARAM, -1.0, 4.0, 0.0);
-		configParam(A_EXP_FM_PARAM, -1.7, 1.7, 0.0);
-		configParam(A_LIN_FM_PARAM, -11.7, 11.7, 0.0);
-		configParam(B_EXP_FM_PARAM, -1.7, 1.7, 0.0);
-		configParam(B_LIN_FM_PARAM, -11.7, 11.7, 0.0);
-		configParam(A_CHAOS_PARAM, 0.0, 1.0, 0.0);
-		configParam(A_SYNC_PROB_PARAM, 0.0, 1.0, 0.0);
-		configParam(B_CHAOS_PARAM, 0.0, 1.0, 0.0);
-		configParam(B_SYNC_PROB_PARAM, 0.0, 1.0, 1.0);
-		configParam(A_CHAOS_MOD_PARAM, -0.1, 0.1, 0.0);
-		configParam(A_SYNC_PROB_MOD_PARAM, -0.1, 0.1, 0.0);
-		configParam(B_CHAOS_MOD_PARAM, -0.1, 0.1, 0.0);
-		configParam(B_SYNC_PROB_MOD_PARAM, -0.1, 0.1, 0.0);
+		configParam(A_OCTAVE_PARAM, 4, 12, 8, "Octave", "", 0.f, 1.f, -4.f);
+		configParam(A_COARSE_PARAM, -7, 7, 0, "Coarse Offset", " step", 0.f, 0.5f, 0.f);
+		configParam(A_FINE_PARAM, -0.083333, 0.083333, 0.0, "Fine Offset", " step", 0.f, 6.f, 0.f);
+		configParam(B_RATIO_PARAM, -1.0, 4.0, 0.0, "B Ratio");
+		configParam(A_EXP_FM_PARAM, -1.7, 1.7, 0.0, "A Exp. FM");
+		configParam(A_LIN_FM_PARAM, -11.7, 11.7, 0.0, "A Lin. FM");
+		configParam(B_EXP_FM_PARAM, -1.7, 1.7, 0.0, "B Exp. FM");
+		configParam(B_LIN_FM_PARAM, -11.7, 11.7, 0.0, "B Lin. FM");
+		configParam(A_CHAOS_PARAM, 0.0, 1.0, 0.0, "A Chaos");
+		configParam(A_SYNC_PROB_PARAM, 0.0, 1.0, 0.0, "A Sync Probability");
+		configParam(B_CHAOS_PARAM, 0.0, 1.0, 0.0, "B Chaos");
+		configParam(B_SYNC_PROB_PARAM, 0.0, 1.0, 1.0, "B Sync Probability");
+		configParam(A_CHAOS_MOD_PARAM, -0.1, 0.1, 0.0, "A Chaos Mod.");
+		configParam(A_SYNC_PROB_MOD_PARAM, -0.1, 0.1, 0.0, "A Sync Mod.");
+		configParam(B_CHAOS_MOD_PARAM, -0.1, 0.1, 0.0, "B Chaos Mod.");
+		configParam(B_SYNC_PROB_MOD_PARAM, -0.1, 0.1, 0.0, "B Sync Mod.");
 	}
 	void process(const ProcessArgs &args) override;
 	void onSampleRateChange() override;
