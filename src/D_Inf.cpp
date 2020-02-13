@@ -1,5 +1,7 @@
 #include "21kHz.hpp"
 
+using simd::float_4;
+
 struct D_Inf : Module {
 	enum ParamIds {
         OCTAVE_PARAM,
@@ -60,15 +62,20 @@ void D_Inf::process(const ProcessArgs &args) {
         newState(invert, !inputs[INVERT_INPUT].isConnected(), invertTrigger.process(inputs[INVERT_INPUT].getVoltage()));
     }
     newState(transpose, !inputs[TRANSPOSE_INPUT].isConnected(), transposeTrigger.process(inputs[TRANSPOSE_INPUT].getVoltage()));
+		float xpose_coeff = params[OCTAVE_PARAM].getValue() + 0.083333 * params[COARSE_PARAM].getValue() + 0.041667 * params[HALF_SHARP_PARAM].getValue();
 
-    float output = inputs[A_INPUT].getVoltage();
-    if (invert) {
+		int channels = inputs[A_INPUT].getChannels();
+		for (int c = 0; c < channels; c+=4) {
+	    float_4 output = inputs[A_INPUT].getPolyVoltageSimd<float_4>(c);
+	    if (invert) {
         output *= -1.0f;
+	    }
+	    if (transpose) {
+        output += xpose_coeff;
+	    }
+	    outputs[A_OUTPUT].setVoltageSimd(output, c);
     }
-    if (transpose) {
-        output += params[OCTAVE_PARAM].getValue() + 0.083333 * params[COARSE_PARAM].getValue() + 0.041667 * params[HALF_SHARP_PARAM].getValue();
-    }
-    outputs[A_OUTPUT].setVoltage(output);
+    outputs[A_OUTPUT].setChannels(channels);
 }
 
 
