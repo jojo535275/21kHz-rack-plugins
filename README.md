@@ -1,6 +1,6 @@
-# 21kHz 0.6.1
+# 21kHz v1.0.1
 
-A couple of modules I made for [VCV Rack](https://vcvrack.com/). More to come. The following is a list of and documentation for each module in the plugin. Also, I've linked to audio demos next to the section title of some modules.
+A couple of modules made for [VCV Rack](https://vcvrack.com/). The modules were originally written by 21kHz and have been enhanced and are currently maintained by Netboy3. The following is a list of and documentation for each module in the plugin. Also, I've linked to audio demos next to the section title of some modules.
 
 <img src="docs/PalmLoop.png" alt="drawing" height="420px"/>
 
@@ -24,11 +24,11 @@ There are five outputs. The top two are saw and sine, and the bottom three are s
 
 ## *D*<sub>∞</sub>
 
-A basic module for modifying V/OCT signals by transposition and inversion.
+A polyphonic module for modifying V/OCT signals by transposition and inversion.
 
 The OCTAVE knob transposes the signal in octave increments (-4 to +4), and the COARSE knob transposes it in half step increments (-7 to +7). The 1/2 # button raises the transposed signal by a quarter step, so quartertone transpositions can be achieved. When the INV button is on, the incoming signal is inverted about 0V before being transposed.
 
-The rest of the controls determine when the transposition and inversion are done. Both the TRANS and INV input accept triggers. By default, if there is no input at the TRANS port, the transposition is always active. If the TRANS port has an input, then a trigger from that input will toggle the transposition between being active and inactive. The INV input acts the same, but only if the corresponding button is on; if it is off, the signal is never inverted.
+The rest of the controls determine when the transposition and inversion are done. Both the TRANS and INV input accept triggers. By default, if there is no input at the TRANS port, the transposition is always active. If the TRANS port has an input, then a trigger from that input will toggle the transposition between being active and inactive. The INV input acts the same, but only if the corresponding button is on; if it is off, the signal is never inverted. The IN/OUT plugs are polyphonic. Modifiers (either knobs or CV inputs) will be applied to each channel in the polyphonic group.
 
 **Tips**
 - Swap between differently transposed sequences with a sequential switch for controlled harmonic movement.
