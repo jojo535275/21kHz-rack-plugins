@@ -100,6 +100,22 @@ struct TachyonEntangler : Module {
 		configParam(A_SYNC_PROB_MOD_PARAM, -0.1, 0.1, 0.0, "A Sync Mod.");
 		configParam(B_CHAOS_MOD_PARAM, -0.1, 0.1, 0.0, "B Chaos Mod.");
 		configParam(B_SYNC_PROB_MOD_PARAM, -0.1, 0.1, 0.0, "B Sync Mod.");
+		configInput(A_EXP_FM_INPUT, "(A) Exponential FM");
+		configInput(A_LIN_FM_INPUT, "(A) Linear FM");
+		configInput(A_CHAOS_INPUT, "(A) Chaos");
+		configInput(A_SYNC_PROB_INPUT, "(A) Sync Probability");
+		configInput(B_CHAOS_INPUT, "(B) Chaos");
+		configInput(B_SYNC_PROB_INPUT, "(B) Sync Probability");
+		configInput(B_EXP_FM_INPUT, "(B) Exponential FM");
+		configInput(B_LIN_FM_INPUT, "(B) Linear FM");
+		configInput(A_V_OCT_INPUT, "(A) Pitch (volt/octave)");
+		configInput(A_RESET_INPUT, "(A) Reset");
+		configInput(B_V_OCT_INPUT, "(B) Pitch (volt/octave)");
+		configInput(B_RESET_INPUT, "(B) Reset");
+		configOutput(A_SAW_OUTPUT, "(A) Sawtooth Wave");
+		configOutput(A_SQR_OUTPUT, "(A) Square Wave");
+		configOutput(B_SAW_OUTPUT, "(B) Sawtooth Wave");
+		configOutput(B_SQR_OUTPUT, "(B) Square Wave");
 	}
 	void process(const ProcessArgs &args) override;
 	void onSampleRateChange() override;

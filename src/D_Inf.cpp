@@ -36,6 +36,10 @@ struct D_Inf : Module {
 		configParam(COARSE_PARAM, -7, 7, 0, "Coarse");
 		configParam(HALF_SHARP_PARAM, 0, 1, 0, "Half Sharp");
 		configParam(INVERT_PARAM, 0, 1, 0, "Invert");
+		configInput(INVERT_INPUT, "Invert Control Voltage");
+		configInput(TRANSPOSE_INPUT, "Transpose");
+		configInput(A_INPUT, "Main");
+		configOutput(A_OUTPUT, "Main");
 	}
 	void process(const ProcessArgs &args) override;
 

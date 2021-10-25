@@ -1,4 +1,4 @@
-# 21kHz v1.0.1
+# 21kHz v2.0.1
 
 A couple of modules made for [VCV Rack](https://vcvrack.com/). The modules were originally written by 21kHz and have been enhanced and are currently maintained by Netboy3. The following is a list of and documentation for each module in the plugin. Also, I've linked to audio demos next to the section title of some modules.
 

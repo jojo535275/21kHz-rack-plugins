@@ -53,6 +53,15 @@ struct PalmLoop : Module {
 		configParam(FINE_PARAM, -0.083333, 0.083333, 0.0, "Fine Offset", " step", 0.f, 6.f, 0.f);
 		configParam(EXP_FM_PARAM, -1.0, 1.0, 0.0, "Exp. FM");
 		configParam(LIN_FM_PARAM, -11.7, 11.7, 0.0, "Lin. FM");
+		configInput(EXP_FM_INPUT, "Exponential FM");
+		configInput(V_OCT_INPUT, "Master Pitch");
+		configInput(LIN_FM_INPUT, "Linear FM");
+		configInput(RESET_INPUT, "Reset");
+		configOutput(SAW_OUTPUT, "Sawtooth Wave");
+		configOutput(SIN_OUTPUT, "Sin Wave");
+		configOutput(SQR_OUTPUT, "Square Wave");
+		configOutput(TRI_OUTPUT, "Triangle Wave");
+		configOutput(SUB_OUTPUT, "Sub Sine Wave");
 	}
 	void process(const ProcessArgs &args) override;
 	void onSampleRateChange() override;
