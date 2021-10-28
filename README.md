@@ -4,7 +4,7 @@ A couple of modules made for [VCV Rack](https://vcvrack.com/). The modules were 
 
 <img src="docs/PalmLoop.png" alt="drawing" height="420px"/>
 
-## Palm Loop ([Audio Demo](https://clyp.it/d5zatc4a))
+## <a name="PalmLoop"></a> Palm Loop ([Audio Demo](https://clyp.it/d5zatc4a))
 
 Palm Loop is a basic and CPU-friendly VCO, implementing through-zero FM and polyBLEP and polyBLAMP anti-aliasing.
 
@@ -22,7 +22,7 @@ There are five outputs. The top two are saw and sine, and the bottom three are s
 
 <img src="docs/D_Inf.png" alt="drawing" height="420px"/>
 
-## *D*<sub>∞</sub>
+## <a name="DInf"></a> *D*<sub>∞</sub>
 
 A polyphonic module for modifying V/OCT signals by transposition and inversion.
 
@@ -36,7 +36,7 @@ The rest of the controls determine when the transposition and inversion are done
 
 <img src="docs/TachyonEntangler.png" alt="drawing" height="420px"/>
 
-## Tachyon Entangler
+## <a name="TachyonEntangler"></a> Tachyon Entangler
 
 The Tachyon Entangler is an anti-aliased chaotic sync oscillator, and is at its core two Palm Loop oscillators with chaos, which can be probabilistically cross-synced. By default, oscillator A (left) is the master and oscillator B (right) is the slave.
 
