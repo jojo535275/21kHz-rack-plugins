@@ -77,7 +77,7 @@ void PalmLoop::onSampleRateChange() {
 // quick explanation: the whole thing is driven by a naive sawtooth, which writes to a four-sample buffer for each
 // (non-sine) waveform. the waves are calculated such that their discontinuities (or in the case of triangle, derivative
 // discontinuities) only occur each time the phasor exceeds a [0, 1) range. when we calculate the outputs, we look to see
-// if a discontinuity occured in the previous sample. if one did, we calculate the polyblep or polyblamp and add it to
+// if a discontinuity occurred in the previous sample. if one did, we calculate the polyblep or polyblamp and add it to
 // each sample in the buffer. the output is the oldest buffer sample, which gets overwritten in the following step.
 
 void PalmLoop::process(const ProcessArgs &args) {
