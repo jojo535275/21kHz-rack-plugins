@@ -91,7 +91,7 @@ struct D_InfWidget : ModuleWidget {
 		addChild(createWidget<kHzScrew>(Vec(RACK_GRID_WIDTH, 0)));
 		addChild(createWidget<kHzScrew>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
-		addParam(createParam<kHzKnobSmallSnap>(Vec(24, 40), module, D_Inf::OCTAVE_PARAM));
+		addParam(createParam<kHzKnobSmallSnap>(Vec(25, 40), module, D_Inf::OCTAVE_PARAM));
 		addParam(createParam<kHzKnobSmallSnap>(Vec(14, 96), module, D_Inf::COARSE_PARAM));
 
 		addParam(createParam<kHzButton>(Vec(10, 150), module, D_Inf::HALF_SHARP_PARAM));
